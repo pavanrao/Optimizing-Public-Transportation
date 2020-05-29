@@ -15,7 +15,7 @@ class Turnstile(Producer):
     key_schema = avro.load(f"{Path(__file__).parents[0]}/schemas/turnstile_key.json")
 
     #
-    # TODO: Define this value schema in `schemas/turnstile_value.json, then uncomment the below
+    #  Define this value schema in `schemas/turnstile_value.json, then uncomment the below
     #
     value_schema = avro.load(
         f"{Path(__file__).parents[0]}/schemas/turnstile_value.json"
@@ -33,15 +33,15 @@ class Turnstile(Producer):
 
         #
         #
-        # TODO: Complete the below by deciding on a topic name, number of partitions, and number of
+        #  Complete the below by deciding on a topic name, number of partitions, and number of
         # replicas
         #
         #
         topic_name = "cta.turnstiles"
         super().__init__(
-            topic_name, # TODO: Come up with a better topic name
+            topic_name, #  Come up with a better topic name
             key_schema=Turnstile.key_schema,
-            value_schema=Turnstile.value_schema, #TODO: Uncomment once schema is defined
+            value_schema=Turnstile.value_schema, # Uncomment once schema is defined
             num_partitions=1,
             num_replicas=1,
         )
@@ -53,7 +53,7 @@ class Turnstile(Producer):
         num_entries = self.turnstile_hardware.get_entries(timestamp, time_step)
         #
         #
-        # TODO: Complete this function by emitting a message to the turnstile topic for the number
+        #  Complete this function by emitting a message to the turnstile topic for the number
         # of entries that were calculated
         #
         #

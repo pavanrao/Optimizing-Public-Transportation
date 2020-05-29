@@ -36,7 +36,7 @@ class Producer:
 
         #
         #
-        # TODO: Configure the broker properties below. Make sure to reference the project README
+        #  Configure the broker properties below. Make sure to reference the project README
         # and use the Host URL for Kafka and Schema Registry!
         #
         #
@@ -52,7 +52,7 @@ class Producer:
             self.create_topic()
             Producer.existing_topics.add(self.topic_name)
 
-        # TODO: Configure the AvroProducer
+        #  Configure the AvroProducer
         # self.producer = AvroProducer(
         # )
         self.producer = AvroProducer(self.broker_properties,
@@ -64,7 +64,7 @@ class Producer:
         """Creates the producer topic if it does not already exist"""
         #
         #
-        # TODO: Write code that creates the topic for this producer if it does not already exist on
+        #  Write code that creates the topic for this producer if it does not already exist on
         # the Kafka Broker.
         #
         #
@@ -101,7 +101,7 @@ class Producer:
         """Prepares the producer for exit by cleaning up the producer"""
         #
         #
-        # TODO: Write cleanup code for the Producer here
+        #  Write cleanup code for the Producer here
         #
         #
         logger.info("producer close  - flush producer")

@@ -32,7 +32,7 @@ class KafkaConsumer:
 
         #
         #
-        # TODO: Configure the broker properties below. Make sure to reference the project README
+        # Configure the broker properties. Reference the project README
         # and use the Host URL for Kafka and Schema Registry!
         #
         #
@@ -42,7 +42,7 @@ class KafkaConsumer:
                 "auto.offset.reset": offset_earliest
         }
 
-        # TODO: Create the Consumer, using the appropriate type.
+        #  Create the Consumer, using the appropriate type.
         if is_avro is True:
             self.broker_properties["schema.registry.url"] = "http://localhost:8081"
             self.consumer = AvroConsumer({
@@ -59,7 +59,7 @@ class KafkaConsumer:
             )
         #
         #
-        # TODO: Configure the AvroConsumer and subscribe to the topics. Make sure to think about
+        #  Configure the AvroConsumer and subscribe to the topics. Make sure to think about
         # how the `on_assign` callback should be invoked.
         #
         #
@@ -67,7 +67,7 @@ class KafkaConsumer:
 
     def on_assign(self, consumer, partitions):
         """Callback for when topic assignment takes place"""
-        # TODO: If the topic is configured to use `offset_earliest` set the partition offset to
+        # If the topic is configured to use `offset_earliest` set the partition offset to
         # the beginning or earliest
         for partition in partitions:
             if self.offset_earliest:
@@ -89,7 +89,7 @@ class KafkaConsumer:
         """Polls for a message. Returns 1 if a message was received, 0 otherwise"""
         #
         #
-        # TODO: Poll Kafka for messages. Make sure to handle any errors or exceptions.
+        # Poll Kafka for messages. Make sure to handle any errors or exceptions.
         # Additionally, make sure you return 1 when a message is processed, and 0 when no message
         # is retrieved.
         #
